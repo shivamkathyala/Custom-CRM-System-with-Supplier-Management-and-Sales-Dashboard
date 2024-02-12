@@ -1,0 +1,1587 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300&display=swap');
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+/* Buttons */
+#addcontactbtn {
+    background-color: #555555;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    height: 48px;
+    width: 200px;
+    font-weight: bold;
+}
+#contactRecord_length {
+    margin-bottom: 11px;
+}
+.errorAlert {
+    position: absolute;
+    bottom: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 4PX;
+    padding: 3px 15px;
+    font-size: 12px;
+    display: none;
+} 
+.successAlert {
+    color: red;
+    background-color: #ff5050;
+    width: 98%;
+    color: #fff;
+    border-radius: 4PX;
+}
+user agent stylesheet
+di
+/* Highlight class */
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
+}
+#deletecontactbtn {
+    position: fixed;
+    top: 104px;
+    left: 600px;
+    background-color: #ff000096;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.successDelete {
+    color: red !important;
+    font-size: 19px;
+    text-align: center !important;
+    padding-top: 26px;
+}
+
+/* CSS for highlighting rows */
+tr:hover {
+	background-color: green;
+	cursor: pointer;
+	
+}
+/*06_Oct_2023*/
+.navbar {
+    overflow: hidden;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+#site-header nav.main-nav li {
+    display: inline-grid;
+}
+#site-header nav.main-nav ul {
+    float: right;
+}
+td {
+    white-space: nowrap;
+    height: 40px;
+    font-size: 14px;
+}
+#site-header .site-logo a {
+    margin-top: 33px;
+}
+
+.leftsidebar ul a {
+    color: #fff;
+}
+
+.leftsidebar li {
+    margin-bottom: 15px !important;
+}
+.leftsidebar ul {
+    padding-left: 60px;
+    padding-top: 20px;
+}
+.site-logo a span{
+    color: green;
+}
+.site-logo a {
+    color: #fff;
+    padding-left: 15px;
+    font-size: 24px;
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: 700;
+}
+#site-header .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    padding: 14px 14px;
+    text-decoration: none;
+}
+
+.pageContent {
+    width: calc(100% - 400px);
+    margin-left: auto;
+    position: absolute;
+    right: 18px;
+    top: 100px;
+}
+
+th {
+    white-space: nowrap;
+}
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    overflow-x: auto;
+    margin: 20px !important;
+}
+.menu-buttons button {
+	background-color: lightgray;
+	color: black;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	width: 100%;
+	text-align: left;
+}
+
+.menu-buttons button:hover {
+	background-color: darkblue;
+	color: white;
+}
+#headwrapper {
+    display: flex;
+    justify-content: space-between;
+}
+/*end*/
+
+/* Search Input */
+input#contactsearch {
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	width: 300px;
+	display: block;
+	margin: 0 auto;
+}
+/* Table Styles */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+    border: 1px solid #bfbfbf52;
+    text-align: left;
+}
+
+/*************Popup design start***********************/
+#formpopup {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    max-width: 100%;
+    background-color: #0000006b;
+    z-index: 1000;
+    max-height: 100%;
+    display: none;
+	left: 0;
+}
+.survey_name {
+    border: 1px solid #d9d9d9 !important;
+    text-align: center;
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+}
+.errorAlertsurvey {
+    color: #dd0000;
+}
+#AddContactForm {
+    background: white;
+    width: 100%;
+    padding: 20px 10px 20px 23px;
+    max-width: 493px;
+    border-radius: 10px;
+    margin: auto;
+    position: absolute;
+    left: 30%;
+    top: 9%;
+}
+form#AddContactForm h1 {
+	color: #000;
+	font-size: 31px;
+	font-family: railway;
+	font-weight: 800;
+	text-align: center;
+	margin-top: 0px;
+	margin-right: 59px;
+}
+input[type="text"], input[type="email"], input[type="submit"] {
+    width: 225px;
+    height: 30px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 11px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+form#AddContactForm label {
+	color: #000;
+	font-size: 16px;
+	font-weight: 700;
+	display: block;
+	text-align: inherit;
+	padding-bottom: 4px;
+}
+.form-first-text {
+	width: 50%;
+	float: left;
+}
+.form-tag-text {
+	width: 50%;
+	float: left;
+}
+.form-email-text {
+	width: 50%;
+	float: left;
+}
+.form-phone-text {
+	width: 50%;
+	float: left;
+}
+.form-value-text {
+	float: left;
+	width: 50%;
+}
+.form-event-text input {
+	float: left;
+	width: 472px;
+}
+label#events-error {
+	width: 231px;
+	border-radius: 6px;
+	padding-top: 14px;
+	font-size: 15px !important;
+	margin-top: 5px !important;
+	text-align: center !important;
+}
+form#AddContactForm input[type="submit"] {
+    width: 230px;
+    height: 43px;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 36px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+form#AddContactForm input[type="reset"] {
+	width: 230px;
+	height: 45px;
+	background-color: #ff3838;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+	border-radius: 6px;
+	    cursor: pointer;
+}
+.form-submit-btn {
+	width: 50%;
+	float: left;
+	margin-top: -21px;
+}
+.error {
+	color: red !important;
+	font-size: 17px !important;
+}
+/*************Popup design end***********************/
+
+/*************survey form design start***************/
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    right: 28px;
+    top: 0px;
+}
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 80px;
+    right: 0;
+    border: 0;
+    z-index: 1000;
+    max-height: 100%;
+    overflow-y: auto;
+    background: #00000078;
+    left: 0;
+}
+.form-container {
+    max-width: 410px;
+    padding: 10px 30px 10px 30px;
+    margin-top: 28px;
+    background-color: white;
+    height: 430px;
+    margin-top: 25px;
+    overflow-y: auto;
+    margin: auto;
+    position: absolute;
+    left: 35%;
+    top: 14%;
+}
+form.form-container h3 {
+    font-size: 24px;
+    text-align: center;
+}
+.form-container input[type=text] {
+    width: 95%;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+.form-container input[type=text]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 99%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.btnmain {
+    background-color: #000000;
+    color: white;
+    padding: 6px 8px;
+    border: none;
+    cursor: pointer;
+    margin-right: 3px;
+	font-size: 11px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    float: right;
+    opacity: 0.8;
+}
+.btnmain:hover{
+	background-color:#474545;
+}
+button.remove_field {
+    margin-left: 305px;
+    height: 23px;
+    width: 82px;
+    margin-bottom: 8px;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    background-color: #ff0000d1;
+}
+.form-container .cancel {
+	background-color: red;
+}
+.form-container .btn:hover,
+.open-button:hover {
+	opacity: 1;
+}
+.survey-text label {
+    font-size: 19px !important;
+    font-weight: 700;
+}
+/*************survey form design end***********************/
+
+/********************loader Start**************************/
+@keyframes ajaxLoaderHorizontal
+    {
+        0%, 40%, 100%
+            {
+                background-color: #111;
+                box-shadow: 0 5px 6px rgba(10, 10, 10, 0.1);
+                transform: scaleY(0.7);
+            }
+       
+        20%
+            {
+                background-color: #FEFEFE;
+                box-shadow: 0 5px 6px rgba(10, 10, 10, 0.9);
+                transform: scaleY(1);
+            }
+    }
+div#ajaxLoaderHorizontal
+    {
+        width: 50px;
+        text-align: center;
+        margin: 10px auto;
+    }    
+div#ajaxLoaderHorizontal div.ajaxInner
+    {
+        height: 50px;
+        width: 10px;
+        display: inline-block; 
+    }    
+div#ajaxLoaderHorizontal div.ajaxInner:nth-child(1)
+    {
+        animation: ajaxLoaderHorizontal 1.2s ease-in-out infinite;
+    }
+div#ajaxLoaderHorizontal div.ajaxInner:nth-child(2)
+    {
+        animation: ajaxLoaderHorizontal 1.2s ease-in-out -1s infinite;
+    }
+div#ajaxLoaderHorizontal div.ajaxInner:nth-child(3)
+    {
+        animation: ajaxLoaderHorizontal 1.2s ease-in-out -0.8s infinite;
+    }										
+/*************loader End***********************/
+
+/************** Auth CSS start ****************/
+.form {
+    margin: 50px auto;
+    width: 300px;
+    padding: 30px 25px;
+    background: white;
+}
+h1.login-title {
+    color: #666;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    width: 247px !important;
+}
+.login-input {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 21px;
+    height: 31px;
+    border: none;
+    width: 227px;
+    margin-top: 10px;
+}
+.login-input:focus {
+    border-color:#6e8095;
+    outline: none;
+}
+input.login-button {
+    width: 247px;
+    height: 46px;
+    background-color: #04aaaa !important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.link a {
+    color: #0026ff;
+    font-size: 18px !important;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 58px;
+}
+/* Left Menu */
+.pageContent {
+    width: calc(100% - 310px);
+    margin-left: auto;
+    position: absolute;
+    right: 18px;
+    top: 100px;
+}
+.site-logo a {
+    color: #fff;
+    padding-left: 15px;
+    font-size: 24px;
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: 700;
+}
+.site-logo a span {
+    color: green;
+}
+/*15_Oct_2023*/
+#site-header .navbar {
+    overflow: hidden;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+}
+h3 {
+    font-weight: normal;
+    text-align: center;
+}
+select.options {
+    width: 247px;
+    height: 52px;
+    margin-left: -10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    color: #706767;
+    margin-top: -6px;
+    padding-left: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid #f1f1f1;
+}
+		.navbar a {
+		  float: left;
+		  font-size: 16px;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+		.dropdown {
+		  float: left;
+		  overflow: hidden;
+		}
+		.dropdown .dropbtn {
+		  cursor: pointer;
+		  font-size: 16px;  
+		  border: none;
+		  outline: none;
+		  color: white;
+		  padding: 14px 16px;
+		  background-color: inherit;
+		  font-family: inherit;
+		  margin: 0;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  float: none;
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  text-align: left;
+		}
+		.dropdown-content a:hover {
+		  background-color: #04AA6D;
+		}
+		.show {
+		  display: block;
+		}
+		.active {
+		  background-color: #04AA6D;
+		}
+	/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		.close {
+		  color: #aaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+		  color: black;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+		/*15_Oct_2023 End*/
+		/*17_Oct_2023*/
+	#myInput {
+    width: 94%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    float: right;
+	}
+	#myTable {
+	  border-collapse: collapse;
+	  width: 100%;
+	  border: 1px solid #ddd;
+	  font-size: 18px;
+	}
+	#myTable th, #myTable td {
+	  text-align: left;
+	  padding: 12px;
+	}
+	#myTable tr {
+	  border-bottom: 1px solid #ddd;
+	}
+	#myTable tr.header, #myTable tr:hover {
+	  background-color: #f1f1f1;
+	}		
+	h2.salehead {
+    text-align: center;
+    font-size: 2rem;
+	}
+	body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.site-logo a {
+    margin-top: 33px;
+}
+ul li {
+    list-style: none;
+}
+ul.profile-logout {
+  display: none;
+}
+.pageContent {   float: left;
+}
+.form {
+    margin: 50px auto;
+    width: 300px;
+    padding: 30px 25px;
+    background-color: #fff;
+}
+.leftsidebar ul a {
+    color: #fff;
+}
+.leftsidebar li {
+    margin-bottom: 15px !important;
+	padding: 10px;
+}
+li:hover {
+    background: green;
+    cursor: pointer;
+}
+ul li.active ul {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+.main-nav {
+    padding-right: 30px;
+}
+.navbar a:hover{
+    background: green;
+}
+
+.userSettings li a {
+    text-align: left !important;
+}
+.userSettings {
+    background: orange;
+    visibility: hidden;
+    opacity: 0;
+    max-width: 135px;
+    transition: all 0.5s ease;
+    right: 30px;
+    top: 9%;
+    position: fixed;
+    display: none;
+    padding-left: 0px !important;
+    z-index: 1;
+}
+/*18_Oct_2023 End*/
+.leftsidebar ul {
+    margin-top: 40px;
+    padding-left: 15px;
+}
+.leftsidebar li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+/***************** Auth CSS end *********************/
+
+/************** Profile page CSS start **************/
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 100%;
+}
+	.popup-content {
+    background: #fff;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    height: 450px;
+    overflow-y: auto;
+}
+#tagsIP_tag {
+    width: 100% !important;
+    padding: 10px;
+}
+#saleIP_tag{
+	width: 100% !important;
+    padding: 10px;
+}
+.modal-content {
+
+    height: auto !important; 
+}
+#tagsIP_tagsinput {
+    height: unset !important;
+    min-height: unset !important;
+}
+#addTag {
+    background: #0093ff;
+    border: #0093ff;
+    padding: 10px 22px;
+    margin-top: 10px;
+    color: #fff;
+}
+.save_close {
+    display: flex;
+    gap: 20px;
+    padding-top: 19px;
+}
+.save_btn {
+    background: #0093ff;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+#closePopup {
+    background: #ff0021;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+.save_close button {
+    padding: 15px;
+    width: 100%;
+}
+	.popup-content form label {
+    display: block;
+    margin-top: 18px;
+    text-align: left;
+    margin-bottom: 6px;
+}
+#content {
+    width: 98%;
+}
+.m-row button {
+    padding: 10px 50px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+button#tagButton {
+	    padding: 10px 50px;
+    white-space: nowrap;
+}
+.form-filed {
+    padding: 5px;
+	padding-left: 0px;
+}
+.salesprocess {
+    white-space: nowrap;
+    background: #efefef;
+    padding: 10px 50px;
+    text-decoration: none;
+    border: 1px solid #0009;
+    border-radius: 4px;
+    color: #000;
+    cursor: pointer;
+}
+#deal_Table td {
+    white-space: nowrap;
+    font-size: 10px;
+}
+#deal_Table td:nth-child(3) {
+    font-size: 8px;
+}
+#myBtn, #myBtn2, #addsalescall, #addprospectingcall {
+    padding: 10px 25px;
+    border: 1px solid #1a8d1a;
+    margin: 5px -2px 5px;
+    width: 96%;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.timeLin_inner {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#timeline {
+    background: #fff;
+    padding: 10px;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    overflow: visible;
+}
+.flexthisrow {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#maincontentwrapper {
+    flex-direction: column;
+}
+.possimPara p b {
+    color: red;
+}
+.posimIcon a i {
+    color: #000;
+}
+#previoussalescallslist {
+    margin: 10px 0px 4px;
+}
+.md-right {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 5px;
+}
+.tp-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+#myFormEvent input {
+    width: 98%;
+    padding: 10px 0px 10px 3px;
+}
+
+#overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); 
+	z-index: 9998; 
+}
+#maincontentwrapper {
+    position: fixed;
+    left: 315px;
+    top: 165px;
+    white-space: nowrap;
+    background-color: rgba(255, 0, 0, 0.5);
+    overflow-x: auto;
+    overflow-y: scroll;
+    height: calc(100vh - 200px);
+    border: 1px solid #000;
+    display:flex;
+    width: 630px !important;
+    Use a valid color /: ;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+#sidebarcontactdetailswrapper {
+    position: fixed;
+    left: 0px;
+    top: 00px;
+    background-color: lightblue;
+    width: 300px;
+    height: 100vh;
+    opacity: 0.9;
+    overflow-y: scroll;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+#topcontentwrapper {
+    margin-left: 315px;
+    height: 164px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: end;
+}
+    #contacttag {display: inline-block; padding: 10px 20px; background-color: grey; color: white; text-decoration: none; border: 3px solid black; border-radius: 2px; cursor: pointer; }    
+    #salesprocess {display: inline-block; padding: 10px 20px; background-color: grey; color: white; text-decoration: none; border: 3px solid black; border-radius: 2px; cursor: pointer; }
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  height: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.closedm, .close2, .close3, .closeedit, .close5, .closepros, .closesalespopup, .close10, .close6, .closexc {
+    color: white;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.closedm, .close2, .close3, .closeedit, .close5, .closepros, .closesalespopup, .close10, .close6, .closeAns:hover, .close, .close2, .close3, .closeedit, .close5, .closepros, .closesalespopup, .close10, .close6, .closeAns, .closexc:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 19px;
+}
+.modal-header {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.modal-body {
+    padding: 17px 70px;
+    height: 450px;
+    overflow-y: auto;
+}
+.tagsinput .tag {
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #2980b9;
+            padding: 3px 6px;
+            margin-right: 5px;
+        }
+		
+/* Event reminder css start */
+
+.rightside.reminder {
+    float: right;
+    border: 1px solid;
+    border-radius: 19px;
+    margin: 0px;
+    width: 24%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#eventdelete {
+    background-color: #ff1111;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 20px;
+    width: 280px;
+}
+#eventdelete:hover {
+	border: 1px solid black;
+}
+.left-sideContent {
+    position: relative;
+}
+h1#contactname {
+    font-size: 23px;
+    text-align: left;
+}
+.form-filed p b {
+    font-size: 15px;
+    text-transform: capitalize;
+    color: green;
+}
+.form-filed p {
+    padding: 10px;
+    padding-left: 0px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+}
+.sale-interview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+#previoussalescallslist {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+#previoussalescallslist p{
+    margin-right: 3px;
+    font-size: 15px;
+}
+
+#previoussalescallslist p:first-child {
+    font-weight: 600;
+    font-size: 18px;
+    color: green;
+}
+.sale-interview label {
+    font-weight: 600;
+}
+#previousprospectingcalls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+#previousprospectingcalls p {
+    margin-right: 3px;
+    font-size: 15px;
+}
+#previousprospectingcalls p:first-child {
+    font-weight: 600;
+    font-size: 18px;
+    color: green;
+}
+input#type_ {
+    width: 100px;
+}
+
+/************** Profile page CSS end **************/
+#leftMenu {
+    position: fixed;
+    top: 74px;
+    left: 150px;
+    width: 110px;
+    height: 100%;
+    background-color: lightgray;
+    border: 5px solid black;
+    z-index: 999;
+    display: none;
+}
+.leftsidebar {
+    width: 170px;
+    background-color: #000000;
+    float: left;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding-top: 23px;
+    padding-bottom: 110px;
+}
+.userList.pageContent .container {
+    position: absolute;
+    left: -83px;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+input#dataFieldtitle {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#editButtontitle {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button#saveButtontitle {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    BACKGROUND-COLOR: #04AA6D;
+    color: #fff;
+}
+button#saveButtonfname {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #04AA6D;
+    color: #fff;
+}
+input#dataFieldfname {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#saveButtonlname {
+    height: 39px;
+    width: 50px;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+button#editButtonfname {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input#dataFieldlname {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#editButtonlname {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button#saveButtonphone {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #0fa56e;
+    color: #fff;
+}
+input#dataFieldphone {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#editButtonphone {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button#saveButtonemail {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #27ae7c;
+    color: #fff;
+}
+input#dataFieldemail {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#editButtonemail {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input#contactvalue {
+    height: 35px;
+    padding-left: 3px;
+    width: 249px;
+}
+
+input#dataFieldcompany {
+    float: left;
+    width: 203px;
+    height: 35px;
+    margin-right: 10px;
+    padding-left: 3px;
+}
+button#saveButtoncompany {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #27ae7c;
+    color: #fff;
+}
+button#editButtoncompany {
+    height: 39px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input#type_31 {
+    float: left;
+    width: 120px;
+    height: 35px;
+    margin-right: 13px;
+    padding-left: 3px;
+    margin-top: 15px;
+}
+button.saleintbtnedit {
+height: 39px;
+    width: 35px;
+    border: none;
+    border-radius: 4px;
+     margin-top: 15px;
+     cursor: pointer;
+}
+button.saleintbtndel {
+height: 39px;
+    width: 35px;
+    border: none;
+    border-radius: 4px;
+     margin-top: 15px;
+     margin-left:10px;
+     cursor: pointer;
+}
+button#refreshIcon {
+    position: absolute;
+    top: 6px;
+    right: 11px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+select#selectSurvey {
+    width: 420px;
+    height: 40px;
+    background-color: #e2e2e2;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+}
+button#btnAns {
+    height: 41px;
+    width: 98px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #000000;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+.question-set, label {
+    width: 100%;
+    display: inline-block;
+    color: #000000;
+    line-height: 30px;
+}
+input.survey_answer {
+    width: 100%;
+    height: 37px;
+    background-color: #f1f1f1;
+}
+input#saveansform {
+    width: 100%;
+    height: 42px;
+    border: none;
+    background-color: #04aa6d;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+div#notefield {
+    display: flex;
+    z-index: 999 !important;
+    background-color: #b5dce8;
+    padding: 12px 5px 0px 5px;
+    position: relative;
+    border-radius: 4px;
+}
+button#closeheadinput {
+    margin-left: 17px;
+        margin-bottom: 12px;
+
+}
+button#Saveheadinput {
+    margin-left: 18px;
+    margin-bottom: 12px;
+}
+input#textInput {
+    margin-left: -24px;
+}
+input#texttitle {
+    margin-right: 10px;
+}
+td.contenteventshow:hover {
+    background-color: #ffffff !important;
+}
+.dropdown-contentevent {
+    display: none; / Hide the dropdown content by default /
+-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+button.dropbtnevent {
+    height: 30px;
+    width: 70px;
+    background-color: #efefef;
+    cursor: pointer;
+    border: 1px solid #000000b0;
+    border-radius: 4px;
+}
+#\35 7 > label:nth-child(1) {
+    width: 10%;
+}
+#\35 7 > label:nth-child(3) {
+    width: 10%;
+}
+input#edittexttitle {
+    width: 110px;
+    margin-left: 5px;
+}
+input#edittextInput {
+    width: 110px;
+    margin-right: 6px;
+}
+button.noteupdatebutton {
+    height: 30px;
+    width: 56px;
+}
+button#editcloseheadinput {
+    width: 56px;
+    height: 30px;
+}
+#\35 8 > label:nth-child(1) {
+    WIDTH: 10% !important;
+}
+#\35 8 > label:nth-child(3) {
+    WIDTH: 10% !important; 
+}
+#\36 3 > label:nth-child(1) {
+    width: 10%;
+}
+#\36 3 > label:nth-child(3) {
+    width: 10%;
+}
+.answerflex {
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 18px;
+    justify-content: space-around;
+	background: linear-gradient(to right, #C9F2FD, transparent);
+    animation: fade 3s linear infinite;
+	padding-top:12px;
+	padding-bottom:12px;
+}
+button#myBtnsurveyAns {
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #0000007a;
+}
+table.notetabletime {
+    width: 100%;
+    margin: 0 auto;
+}
+div#questionanswer {
+    padding-left: 25px;
+}
+button#deleteSurveyAnswer {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+table.notetabletime, button {
+    cursor: pointer;
+}
+.stimename {
+    font-size: 22px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+.bt-inner {
+    padding: px;
+}
+.label.noteedit {
+    width: 13%;
+}
+p.nosalecallsmsg {
+    color: #000 !important;
+}
+p.nodealsmsg {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.noproscallsmsg {
+    color: #000000;
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 100px;
+}
+.nedit {
+    width: 75px;
+}
+#deal {
+    width: 115px;
+}
+#sales {
+    width: 105px;
+    margin-left: 5px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #e8e8e8;
+    border: #f1f1f1;
+}
+#save {
+    width: 50px;
+    cursor: pointer;
+}
+.stiquesans {
+    text-align: left;
+    padding-bottom: 7px;
+}
+p.nosalecallsmsg {
+    text-align: center !important;
+}
+input#proscallbtn {
+    width: 70px;
+    margin-left: 10px;
+}
+input#salecallbtn {
+    width: 70px;
+    margin-left: 10px;
+}
+label.popupclid {
+    width: auto;
+}
+.salesintdiv {
+    display: inline-grid;
+}
+input#datepicker {
+    height: 25px;
+}
+button#addInterview {
+    height: 30px;
+}
+input#salescalldate {
+    height: 25px;
+    margin-right: 10px;
+}
+input#salescalltime {
+    height: 25px;
+}
+input#proscalldate {
+    height: 25px;
+}
+input#proscalltime {
+    height: 25px;
+    margin-left: 10px;
+}
+button.deleteSurveyAnswer {
+    height: 37px;
+    margin-top: 7px;
+}
+.notagmsg {
+    text-align: center;
+}
+.row-60 {
+    display: flex;
+    justify-content: space-around;
+}	
+.row-9 {
+    display: flex;
+}
+.row-9 p {
+    padding-left: 11px;
+}
+input#type_32 {
+    height: 35px;
+    width: 173px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+button#save_32 {
+    height: 40px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    width: 41px;
+    margin-right: 5px;
+}
+input#type_33 {
+ height: 35px;
+    width: 173px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+button#save_33 {
+height: 40px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    width: 41px;
+    margin-right: 5px;
+}
+
+
+
+
